@@ -1,0 +1,114 @@
+
+   INITIALISE_ANALYSIS : ANALYSIS mode : TRACE_OFF ;                           
+    SET_TRACE: TRACE_FULL ;                                                     
+    START_COVERAGE: TRACE_FULL ;                                                
+    -- Test case LCR-110_SW_LLR_TC_26147                                        
+---------------------------------- TEST 26147 ----------------------------------
+
+        EXECUTE: flash_io.Get_Flash_State ,                                     
+                 Expected Calls =                                               
+                   " "                                                          
+                 EXCEPTION_NOT_EXPECTED ;                                       
+
+
+TRACE: function FLASH_IO.GET_FLASH_STATE ;                                      
+TRACE: Line 586 ;                                                               
+
+TRACE: function FLASH_IO.READ ;                                                 
+TRACE: Line 504 ;                                                               
+TRACE: Line 505 ;                                                               
+TRACE: Line 506 ;                                                               
+TRACE: Line 507 ;                                                               
+TRACE: Line 507 : Expression 1 : TRUE or FALSE ;                                
+TRACE: Line 507 : if           : TRUE ;                                         
+TRACE: Line 508 ;                                                               
+TRACE: Line 509 : case-when ;                                                   
+TRACE: Line 509 ;                                                               
+TRACE: Line 510 ;                                                               
+TRACE: Line 535 ;                                                               
+TRACE: Line 536 ;                                                               
+TRACE: Line 537 ;                                                               
+
+TRACE: return to function FLASH_IO.GET_FLASH_STATE;                             
+TRACE: Line 592 ;                                                               
+TRACE: Line 592 : if           : TRUE ;                                         
+TRACE: Line 596 ;                                                               
+
+TRACE: function FLASH_IO.READ ;                                                 
+TRACE: Line 504 ;                                                               
+TRACE: Line 505 ;                                                               
+TRACE: Line 506 ;                                                               
+TRACE: Line 507 ;                                                               
+TRACE: Line 507 : Expression 1 : TRUE or FALSE ;                                
+TRACE: Line 507 : if           : TRUE ;                                         
+TRACE: Line 508 ;                                                               
+TRACE: Line 511 : case-when ;                                                   
+TRACE: Line 511 ;                                                               
+TRACE: Line 512 ;                                                               
+TRACE: Line 535 ;                                                               
+TRACE: Line 536 ;                                                               
+TRACE: Line 537 ;                                                               
+
+TRACE: return to function FLASH_IO.GET_FLASH_STATE;                             
+TRACE: Line 598 ;                                                               
+
+TRACE: function FLASH_IO.READ ;                                                 
+TRACE: Line 504 ;                                                               
+TRACE: Line 505 ;                                                               
+TRACE: Line 506 ;                                                               
+TRACE: Line 507 ;                                                               
+TRACE: Line 507 : Expression 1 : TRUE or FALSE ;                                
+TRACE: Line 507 : if           : TRUE ;                                         
+TRACE: Line 508 ;                                                               
+TRACE: Line 513 : case-when ;                                                   
+TRACE: Line 513 ;                                                               
+TRACE: Line 514 ;                                                               
+TRACE: Line 535 ;                                                               
+TRACE: Line 536 ;                                                               
+TRACE: Line 537 ;                                                               
+
+TRACE: return to function FLASH_IO.GET_FLASH_STATE;                             
+TRACE: Line 604 ;                                                               
+TRACE: Line 604 : if           : FALSE ;                                        
+TRACE: Line 616 ;                                                               
+TRACE: Line 616 : if           : TRUE ;                                         
+TRACE: Line 617 ;                                                               
+TRACE: Line 673 ;                                                               
+        DONE: flash_io.Get_Flash_State ;                                        
+
+        -- Checking Inputs ...                                                  
+        CHECK (  Addr_for_Get_Flash_State ) ;passed                             
+        CHECK (  Data_for_Get_Flash_State ) ;passed                             
+        CHECK (  Program ) ;fail
+ ED                                              
+                 Item     FALSE                                                 
+        -- Verifying results...                                                 
+        CHECK (  Return value of Get_Flash_State ) ;pa
+ssed 
+ CHECK (  Return value of Get_Flash_State ) ;PASSED                          
+-------------------------------- END TEST 26147 --------------------------------
+             naoh        STOP_COVERAGE ;
+
+++++++++++++++++++++++++++++++++ End of Report +++++++++++++++++++++++++++++++++
+END_SCRIPT: test-flash_io.atr ;                                                 
+
+================================================================================
+        Test Results for test-flash_io.atr                                      
+        Test run completed at 16:06:01                                          
+
+        Script Errors               :  0                                        
+        Checks                                                                  
+            Passed                  :  199                                      
+            Warning                 :  0                                        
+            Failed                  :  5                                        
+            Ignored                 :  0                                        
+        Exceptions                                                              
+            Correct                 :  0                                        
+            Illegal/Failure         :  0                                        
+        Dynamic Assertion Failures  :  0                                        
+        Tests with Stub Failures    :  1                                        
+        Path Failures               :  0                                        
+--------------------------------------------------------------------------------
+                    Overall Test FAILED                                         
+================================================================================
+
